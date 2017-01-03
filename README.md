@@ -73,3 +73,11 @@ The map's keys meanings is as follows.
 - `lexical_form`: 原形
 - `yomi`: 読み
 - `pronunciation`: 発音
+
+
+See Also
+-------------
+
+- [Hex Mecab](https://hex.pm/packages/mecab)
+- [Online Documentation](https://hexdocs.pm/mecab/Mecab.html)
+

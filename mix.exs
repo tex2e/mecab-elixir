@@ -5,6 +5,7 @@ defmodule Mecab.Mixfile do
     [app: :mecab,
      version: "1.0.0",
      elixir: "~> 1.3",
+     source_url: "https://github.com/tex2e/mecab-elixir",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      description: description(),

@@ -1,5 +1,8 @@
 # Mecab
 
+[![hex.pm version](https://img.shields.io/hexpm/v/mecab.svg)](https://hex.pm/packages/mecab)
+[![hex.pm](https://img.shields.io/hexpm/l/mecab.svg)](https://github.com/tex2e/mecab-elixir/blob/master/LICENSE)
+
 Elixir bindings for MeCab, a Japanese morphological analyzer.
 
 
@@ -23,6 +26,9 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
     ```
 
 ## Usage
+
+Further information is available at
+[Hex Online Documentation](https://hexdocs.pm/mecab/Mecab.html)
 
 The way of parsing given string is as follows:
 
@@ -67,6 +73,3 @@ The map's keys meanings is as follows.
 - `lexical_form`: 原形
 - `yomi`: 読み
 - `pronunciation`: 発音
-
-Further information is available at
-[Hex Online Documentation](https://hexdocs.pm/mecab/Mecab.html)

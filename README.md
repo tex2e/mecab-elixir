@@ -14,7 +14,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
     ```elixir
     def deps do
-      [{:mecab, "~> 0.1.0"}]
+      [{:mecab, "~> 1.0.0"}]
     end
     ```
 

@@ -35,7 +35,7 @@ defmodule Mecab.Mixfile do
 
   defp description do
     """
-    Elixir bindings for MeCab, a morphological analyzer.
+    Elixir bindings for MeCab, a Japanese morphological analyzer.
     """
   end
 

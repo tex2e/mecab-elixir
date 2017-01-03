@@ -1,6 +1,6 @@
 defmodule Mecab do
   @moduledoc """
-  Elixir bindings for MeCab, a morphological analyzer.
+  Elixir bindings for MeCab, a Japanese morphological analyzer.
 
   Each parser function returns a list of map.
   The map's keys meanings is as follows.

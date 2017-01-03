@@ -1,6 +1,6 @@
 # Mecab
 
-Elixir bindings for MeCab, a morphological analyzer.
+Elixir bindings for MeCab, a Japanese morphological analyzer.
 
 
 ## Installation

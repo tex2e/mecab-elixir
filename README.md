@@ -12,18 +12,14 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
   1. Add `mecab` to your list of dependencies in `mix.exs`:
 
-    ```elixir
     def deps do
       [{:mecab, "~> 1.0.0"}]
     end
-    ```
 
   2. Ensure `mecab` command is available for your environment:
 
-    ```
     # MacOS
     brew install mecab mecab-ipadic
-    ```
 
 ## Usage
 

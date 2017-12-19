@@ -1,8 +1,5 @@
 # Mecab
 
-[![hex.pm version](https://img.shields.io/hexpm/v/mecab.svg)](https://hex.pm/packages/mecab)
-[![hex.pm](https://img.shields.io/hexpm/l/mecab.svg)](https://github.com/tex2e/mecab-elixir/blob/master/LICENSE)
-
 Elixir bindings for MeCab, a Japanese morphological analyzer.
 
 

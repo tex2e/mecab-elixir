@@ -11,7 +11,7 @@ defmodule MecabTest do
     %{"conjugation" => "", "conjugation_form" => "", "lexical_form" => "。", "part_of_speech" => "記号", "part_of_speech_subcategory1" => "句点", "part_of_speech_subcategory2" => "", "part_of_speech_subcategory3" => "", "pronunciation" => "。", "surface_form" => "。", "yomi" => "。"},
     %{"conjugation" => "", "conjugation_form" => "", "lexical_form" => "", "part_of_speech" => "", "part_of_speech_subcategory1" => "", "part_of_speech_subcategory2" => "", "part_of_speech_subcategory3" => "", "pronunciation" => "", "surface_form" => "EOS", "yomi" => ""}]
 
-  @sentence2 "明日は雨でしょう。"
+  # @sentence2 "明日は雨でしょう。"
   @analysis2 [
     %{"conjugation" => "", "conjugation_form" => "", "lexical_form" => "明日", "part_of_speech" => "名詞", "part_of_speech_subcategory1" => "副詞可能", "part_of_speech_subcategory2" => "", "part_of_speech_subcategory3" => "", "pronunciation" => "アシタ", "surface_form" => "明日", "yomi" => "アシタ"},
     %{"conjugation" => "", "conjugation_form" => "", "lexical_form" => "は", "part_of_speech" => "助詞", "part_of_speech_subcategory1" => "係助詞", "part_of_speech_subcategory2" => "", "part_of_speech_subcategory3" => "", "pronunciation" => "ワ", "surface_form" => "は", "yomi" => "ハ"},
@@ -21,17 +21,32 @@ defmodule MecabTest do
     %{"conjugation" => "", "conjugation_form" => "", "lexical_form" => "。", "part_of_speech" => "記号", "part_of_speech_subcategory1" => "句点", "part_of_speech_subcategory2" => "", "part_of_speech_subcategory3" => "", "pronunciation" => "。", "surface_form" => "。", "yomi" => "。"},
     %{"conjugation" => "", "conjugation_form" => "", "lexical_form" => "", "part_of_speech" => "", "part_of_speech_subcategory1" => "", "part_of_speech_subcategory2" => "", "part_of_speech_subcategory3" => "", "pronunciation" => "", "surface_form" => "EOS", "yomi" => ""}]
 
-  test "Mecab.parse" do
-    assert(Mecab.parse(@sentence1) == @analysis1)
+  describe "parse" do
+    test "parse sample sentence" do
+      assert(Mecab.parse(@sentence1) == @analysis1)
+    end
+
+    test "parse senence included shell expansion" do
+      result =
+        "明日は$(pwd)雨"
+        |> Mecab.parse
+        |> Enum.map(&(&1["surface_form"]))
+        |> Enum.join
+      assert result == "明日は$(pwd)雨EOS"
+    end
   end
 
-  test "Mecab.read" do
-    assert get_in(Mecab.read("not-found.txt"), [Access.elem(0)]) == :error
-    assert Mecab.read("test/sample.txt") == {:ok, @analysis1 ++ @analysis2}
+  describe "read" do
+    test "read sample file" do
+      assert get_in(Mecab.read("not-found.txt"), [Access.elem(0)]) == :error
+      assert Mecab.read("test/sample.txt") == {:ok, @analysis1 ++ @analysis2}
+    end
   end
 
-  test "Mecab.read!" do
-    assert_raise RuntimeError, fn -> Mecab.read!("not-found.txt") end
-    assert Mecab.read!("test/sample.txt") == @analysis1 ++ @analysis2
+  describe "read!" do
+    test "read sample file" do
+      assert_raise RuntimeError, fn -> Mecab.read!("not-found.txt") end
+      assert Mecab.read!("test/sample.txt") == @analysis1 ++ @analysis2
+    end
   end
 end

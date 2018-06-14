@@ -103,7 +103,7 @@ defmodule Mecab do
       end
 
     command
-    |> to_char_list
+    |> to_charlist
     |> :os.cmd
     |> to_string
     |> String.trim

@@ -3,8 +3,8 @@ defmodule Mecab.Mixfile do
 
   def project do
     [app: :mecab,
-     version: "1.0.2",
-     elixir: "~> 1.3",
+     version: "1.0.3",
+     elixir: "~> 1.6",
      source_url: "https://github.com/tex2e/mecab-elixir",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -30,7 +30,7 @@ defmodule Mecab.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:ex_doc, "~> 0.14", only: :dev}]
+    [{:ex_doc, "~> 0.18", only: :dev, runtime: false}]
   end
 
 

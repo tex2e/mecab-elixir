@@ -26,7 +26,7 @@ defmodule MecabTest do
       assert(Mecab.parse(@sentence1) == @analysis1)
     end
 
-    test "parse senence included shell expansion" do
+    test "parse sentence included shell expansion" do
       result =
         "明日は$(pwd)雨"
         |> Mecab.parse

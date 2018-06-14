@@ -3,7 +3,7 @@ defmodule Mecab.Mixfile do
 
   def project do
     [app: :mecab,
-     version: "1.0.1",
+     version: "1.0.2",
      elixir: "~> 1.3",
      source_url: "https://github.com/tex2e/mecab-elixir",
      build_embedded: Mix.env == :prod,

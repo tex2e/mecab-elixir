@@ -96,7 +96,7 @@ defmodule Mecab do
           "mecab '#{str}' #{mecab_option}"
         x when x == nil or x == false ->
           """
-          cat <<EOS.907a600613b96a88c04a | mecab #{mecab_option}
+          cat <<'EOS.907a600613b96a88c04a' | mecab #{mecab_option}
           #{str}
           EOS.907a600613b96a88c04a
           """

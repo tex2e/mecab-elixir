@@ -10,7 +10,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   1. Add `mecab` to your list of dependencies in `mix.exs`:
 
     def deps do
-      [{:mecab, "~> 1.0.0"}]
+      [{:mecab, "~> 1.0"}]
     end
 
   2. Ensure `mecab` command is available for your environment:
@@ -103,4 +103,3 @@ See Also
 
 - [Hex Mecab](https://hex.pm/packages/mecab)
 - [Online Documentation](https://hexdocs.pm/mecab/Mecab.html)
-
